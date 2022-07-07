@@ -18,3 +18,7 @@
 - BoardDao - BoardDaoImpl을 extract interface로 작성
 - BoardDaoImpl - SqlSession을 주입받아서, boardMapper를 보고 작성
 - BoardDaoImplTest - BoardDao의 select 메서드 테스트
+
+### ch4-3 - 게시판 페이징 - TDD
+- PageHandler - 게시판 페이지 만들기
+- PageHandlerTest - 게시판 페이지 테스트
