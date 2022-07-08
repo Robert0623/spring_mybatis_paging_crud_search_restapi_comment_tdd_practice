@@ -49,3 +49,9 @@
 - board.jsp
 1. Js로 목록버튼을 누르면 page와 pageSize정보를 가지고 '/board/list', GET으로 컨트롤러로 가도록.
 2. Js로 삭제버튼을 누르면 page와 pageSize정보를 가지고 '/board/remove', POST로 컨트롤러로 가도록.
+
+### ch4-6 - 게시판 읽기, 쓰기, 삭제, 수정 기능 구현 - 2
+- boardMapper.xml - update SQL문의 where 조건에 writer 추가
+- boardList.jsp - 버튼태그 추가, write 할 때 msg 추가
+- boardServiceImpl - write에 예외 발생시켜서 테스트
+- board.jsp, BoardController - 삭제, 수정기능 구현
