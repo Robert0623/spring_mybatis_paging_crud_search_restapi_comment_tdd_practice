@@ -35,3 +35,17 @@
 - BoardService, BoardServiceImpl - BoardDao를 보고 작성.
 - BoardController - @GetMapping에 getPage를 list로 모델에 저장. page, pageSize를 매개변수로 받아서, offset과 pageSize를 모델에 저장. 
 - boardList.jsp - 반복문으로 게시판 목록, 페이지 화면 추가
+
+### ch4-5 - 게시판 읽기, 쓰기, 삭제, 수정 기능 구현 - 1
+- BoardController 
+1. @GetMapping("/list") - list, pageHandler, page, pageSize를 모델에 추가해서 boardList.jsp로 보냄.
+2. @GetMapping("/read") - boardDto, page, pageSize를 모델에 추가해서 board.jsp로 보냄. 
+3. @PostMapping("/remove") - page, pageSize를 모델에 추가해서 '/board/list'로 msg를 보내고 리다이렉트.  
+
+- boardList.jsp 
+1. title에 a태그를 추가하고, bno, page, pageSize를 EL로 URL재작성.
+2. board.jsp에서 삭제버튼을 눌러서 삭제하면 Js로 메세지 출력.
+
+- board.jsp
+1. Js로 목록버튼을 누르면 page와 pageSize정보를 가지고 '/board/list', GET으로 컨트롤러로 가도록.
+2. Js로 삭제버튼을 누르면 page와 pageSize정보를 가지고 '/board/remove', POST로 컨트롤러로 가도록.
