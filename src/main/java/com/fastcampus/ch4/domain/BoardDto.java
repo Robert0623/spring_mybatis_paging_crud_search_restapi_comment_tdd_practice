@@ -13,10 +13,10 @@ public class BoardDto {
     private Date reg_date;
 
     public BoardDto() {}
-    public BoardDto(Integer bno, String title, String content) {
-        this.bno = bno;
+    public BoardDto(String title, String content, String writer) {
         this.title = title;
         this.content = content;
+        this.writer = writer;
     }
 
     @Override

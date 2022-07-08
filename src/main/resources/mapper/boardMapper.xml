@@ -11,6 +11,11 @@
         DELETE FROM board
     </delete>
 
+    <!-- 관리자 권환을 확인해서 관리자가 게시물 삭제 -->
+    <delete id="deleteForAdmin" parameterType="map">
+        DELETE FROM board WHERE bno = #{bno}
+    </delete>
+
     <delete id="delete" parameterType="map">
         DELETE FROM board WHERE bno = #{bno} and writer = #{writer}
     </delete>
