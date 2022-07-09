@@ -66,3 +66,14 @@
 - boardMapper.xml - 검색을 위해 searchSelectPage, searchResultCnt로 SQL문 추가
 - BoardDao, BoardDaoImpl - DAO에 mapper.xml을 보고 searchSelectPage, searchResultCnt 추가
 - BoardDaoImplTest - searchSelectPage, searchResultCnt 추가했으니 테스트코드로 테스트
+
+### ch4-8 - 게시판 검색 기능 추가하기 - 2
+- board.jsp, boardList.jsp - css 수정 및 ```<c:out>```태그로 보안 강화, core_rt, fmt_rt
+- BoardController - list메서드에 SearchCondition을 이용하도록 수정
+- SearchCondition - getQueryString메서드 추가
+- PageHandler - SearchCondition을 이용하도록 수정
+- PageHandlerTest - 주석처리
+- BoardService, BoardServiceImpl - DAO를 보고 검색 관련 메서드 작성
+- BoardServiceImplTest - 추가한 검색 관련 메서드 테스트
+- boardMapper.xml - 검색 option 추가
+- BoardDaoImplTest - 검색 option 별 테스트 추가
