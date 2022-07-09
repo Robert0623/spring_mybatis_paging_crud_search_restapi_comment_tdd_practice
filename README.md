@@ -55,3 +55,14 @@
 - boardList.jsp - 버튼태그 추가, write 할 때 msg 추가
 - boardServiceImpl - write에 예외 발생시켜서 테스트
 - board.jsp, BoardController - 삭제, 수정기능 구현
+
+## 07.09
+### ch4-7 - 게시판 검색 기능 추가하기 - 1
+- pom.xml - gbee를 검색해서 log4jdbc를 추가
+- log4dbc.log4j2.properties, logback.xml - log4jdbc를 사용하기 위한 설정파일 추가
+- root-context.xml - log4jdbc를 사용하기위한 dataSource의 property태그 중 driverClassName, url 변경
+- mybatis-config.xml - typeAlias에 SearchCondition 추가
+- SerchCondition - 검색을 위해 domain에 생성(DTO)
+- boardMapper.xml - 검색을 위해 searchSelectPage, searchResultCnt로 SQL문 추가
+- BoardDao, BoardDaoImpl - DAO에 mapper.xml을 보고 searchSelectPage, searchResultCnt 추가
+- BoardDaoImplTest - searchSelectPage, searchResultCnt 추가했으니 테스트코드로 테스트
