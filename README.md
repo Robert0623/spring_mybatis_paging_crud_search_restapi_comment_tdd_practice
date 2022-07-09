@@ -77,3 +77,7 @@
 - BoardServiceImplTest - 추가한 검색 관련 메서드 테스트
 - boardMapper.xml - 검색 option 추가
 - BoardDaoImplTest - 검색 option 별 테스트 추가
+
+### ch4-9 - REST API와 Ajax
+- pom.xml - jackson-databind 추가
+- Person, SimpleRestController, ajax.jsp - Ajax 실행 과정 확인, @RequestBody, @ResponseBody, @RestController
