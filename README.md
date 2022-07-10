@@ -81,3 +81,16 @@
 ### ch4-9 - REST API와 Ajax
 - pom.xml - jackson-databind 추가
 - Person, SimpleRestController, ajax.jsp - Ajax 실행 과정 확인, @RequestBody, @ResponseBody, @RestController
+
+## 07.10
+### ch4-10 댓글 기능 구현 - 1 - DAO 작성
+- mybatis-config.xml - CommentDto alias 추가
+- commentMapper.xml - SQL문 추가
+- boardMapper.xml - updateCommentCnt SQL문 추가
+- CommentDao, CommentDaoImpl, CommentDaoImplTest - commentMapper.xml을 보고 작성 후 인터페이스 추출, 테스트
+- BoardDao, BoardDaoImpl - boardMapper.xml을 보고 updateCommentCnt 작성
+- CommentService, CommentServiceImpl, CommentServiceImplTest 
+1. 생성자로 CommentDao, BoardDao 주입
+2. CommentDaoImpl을 보고,
+3. 트랜잭션으로 BoardDao의 댓글 개수와 작업을 묶어서 작성
+4. 인터페이스 추출 후, 테스트

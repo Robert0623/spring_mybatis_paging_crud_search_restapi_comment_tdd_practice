@@ -38,4 +38,5 @@ public interface BoardDao {
 
     int searchResultCnt(SearchCondition sc) throws Exception ;
 
+    public int updateCommentCnt(Integer bno, int cnt);
 }
