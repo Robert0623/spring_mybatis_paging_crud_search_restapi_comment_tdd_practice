@@ -94,3 +94,6 @@
 2. CommentDaoImpl을 보고,
 3. 트랜잭션으로 BoardDao의 댓글 개수와 작업을 묶어서 작성
 4. 인터페이스 추출 후, 테스트
+
+### ch4-11 댓글 기능 구현 - 2 - Controller 작성
+- CommentController - REST API, Ajax로 list(), delete(), write(), update() 구현
