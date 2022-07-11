@@ -103,3 +103,8 @@
 - SimpleRestController - @GetMaping("/test") 메서드명, return view이름 수정
 - CommentController - @PatchMapping("/comments/{cno}") 수정
 - test.jsp - Ajax를 이용한 비동기 처리로 댓글 구현
+
+### ch4-13 댓글 기능 구현 - 4 - 대댓글
+- test.txt - 탐색기 구조의 가지치기 대댓글 설명
+- commentMapper.xml - 대댓글 정렬을 위해 selectAll 수정
+- test.jsp - 대댓글 구현
