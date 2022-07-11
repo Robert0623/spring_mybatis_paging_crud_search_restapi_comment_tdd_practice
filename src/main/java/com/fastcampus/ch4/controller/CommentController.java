@@ -5,6 +5,7 @@ import com.fastcampus.ch4.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,14 +26,18 @@ public class CommentController {
 //    }
 
     //댓글을 수정하는 메서드
-    @PatchMapping("/comments/{cno}") // /ch4/comments?bno=1085 PATCH
-    public ResponseEntity<String> modify(@PathVariable Integer cno, @RequestBody CommentDto dto) {
+    @PatchMapping("/comments/{cno}") // /ch4/comments/70 PATCH
+    public ResponseEntity<String> modify(@PathVariable Integer cno, @RequestBody CommentDto dto, HttpSession session) {
+        //        String commenter = (String) session.getAttribute("id");
+        String commenter = "asdf";
+        dto.setCommenter(commenter);
         dto.setCno(cno);
         System.out.println("dto = " + dto);
 
         try {
             if(service.modify(dto)!=1)
                 throw new Exception("Modify failed");
+
             return new ResponseEntity<>("MOD_OK", HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
@@ -83,6 +88,7 @@ public class CommentController {
         List<CommentDto> list = null;
         try {
             list = service.getList(bno);
+            System.out.println("list = " + list);
             return new ResponseEntity<List<CommentDto>>(list, HttpStatus.OK); //200
         } catch (Exception e) {
             e.printStackTrace();

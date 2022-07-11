@@ -97,3 +97,9 @@
 
 ### ch4-11 댓글 기능 구현 - 2 - Controller 작성
 - CommentController - REST API, Ajax로 list(), delete(), write(), update() 구현
+
+## 07.11
+### ch4-12 댓글 기능 구현 - 3 - UI 작성
+- SimpleRestController - @GetMaping("/test") 메서드명, return view이름 수정
+- CommentController - @PatchMapping("/comments/{cno}") 수정
+- test.jsp - Ajax를 이용한 비동기 처리로 댓글 구현
