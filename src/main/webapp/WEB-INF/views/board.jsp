@@ -108,6 +108,9 @@
       border-radius: 5px;
       cursor: pointer;
     }
+    .delBtn {
+      margin-left: 10px;
+    }
 
   </style>
 </head>
@@ -344,6 +347,25 @@ comment: <input type="text" name="comment" placeholder="댓글을 남겨보세�
 
   //댓글 script2 시작
   let toHtml = function(comments) {
+    let addZero = function(value=1){
+      return value > 9 ? value : "0"+value;
+    }
+
+    let dateToString = function(ms=0) {
+      let date = new Date(ms);
+
+      let yyyy = date.getFullYear();
+      let mm = addZero(date.getMonth() + 1);
+      let dd = addZero(date.getDate());
+
+      let HH = addZero(date.getHours());
+      let MM = addZero(date.getMinutes());
+      let ss = addZero(date.getSeconds());
+
+      return yyyy+"."+mm+"."+dd+ " " + HH + ":" + MM + ":" + ss;
+    }
+
+
     let tmp = "<div>";
 
     comments.forEach(function(comment){
@@ -354,7 +376,7 @@ comment: <input type="text" name="comment" placeholder="댓글을 남겨보세�
         tmp += 'ㄴ'
       tmp += ' <span class="commenter">' + comment.commenter + '</span>'
       tmp += ' <div class="comment">' + comment.comment + '</div>'
-      // tmp += ' up_date'+comment.up_date
+      tmp += dateToString(comment.up_date)
       tmp += '<button class="delBtn">삭제</button>'
       tmp += '<button class="modBtn">수정</button>'
       tmp += '<button class="replyBtn">답글</button>'
