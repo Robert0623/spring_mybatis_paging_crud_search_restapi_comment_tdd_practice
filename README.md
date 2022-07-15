@@ -108,3 +108,14 @@
 - test.txt - 탐색기 구조의 가지치기 대댓글 설명
 - commentMapper.xml - 대댓글 정렬을 위해 selectAll 수정
 - test.jsp - 대댓글 구현
+
+## 07.15
+### 댓글 적용 - 1
+- CommentController - 하드코딩이 아닌 사용자 정보를 HttpSession에서 얻어서 id체크를 하도록 수정
+- board_old.jsp - 댓글 구현 이전의 내용 백업
+- board.jsp - 게시물 상세보기에 댓글 기능 추가, css 수정
+- comment.jsp - 댓글 css 검색해서 저장해놓음
+- loginForm.jsp - 메세지 출력을 위해 decode import태그 추가
+
+### 댓글 적용 - 2
+- board.jsp - up_date의 ms단위로 나오는 것을 날짜와 시간으로 변경해서 표시하도록 dateToString함수를 script에 추가
